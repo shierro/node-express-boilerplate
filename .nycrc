@@ -1,0 +1,26 @@
+{
+  "cache": true,
+  "all": true,
+  "check-coverage": true,
+  "per-file": true,
+  "reporter": [
+    "lcov",
+    "text",
+    "text-summary",
+    "json"
+  ],
+  "exclude": [
+    "src/**/*.spec.js"
+  ],
+  "include": [
+    "src/**/*.js"
+  ],
+  "sourceMap": true,
+  "instrument": true,
+  "watermarks": {
+    "lines": [70, 80],
+    "functions": [80, 95],
+    "branches": [60, 70],
+    "statements": [80, 95]
+  }
+}

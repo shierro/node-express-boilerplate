@@ -1,0 +1,69 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "NodeJS v7+ Express API",
+    "description": "",
+    "version": "0.1.0"
+  },
+  "basePath": "/api",
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/quote": {
+      "post": {
+        "tags": [],
+        "summary": "",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Result of workflow",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "referenceNumber": {
+                  "type": "string",
+                  "default": "client123"
+                },
+                "result": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/200Response"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "200Response": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "number",
+          "description": "Http success result code",
+          "default": 200
+        },
+        "message": {
+          "description": "Response message",
+          "default": "Success",
+          "type": "string"
+        }
+      }
+    }
+  }
+}

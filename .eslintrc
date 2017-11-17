@@ -1,0 +1,23 @@
+{
+  "extends": "airbnb-base",
+  "env": {
+    "node": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 8,
+    "sourceType": "module"
+  },
+  "globals": {
+    // Mocha global variables
+    "describe": true,
+    "beforeEach": true,
+    "before": true,
+    "afterEach": true,
+    "after": true,
+    "it": true
+  },
+  "rules": {
+    "no-console": 0,
+    "no-unused-vars": 1
+  }
+}
