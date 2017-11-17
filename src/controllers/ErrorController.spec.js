@@ -6,6 +6,6 @@ describe('Error Controller', () => {
     'should return 404',
     () => request(app)
       .get('/api/that-did-not-exist')
-      .expect(404)
+      .expect(404),
   );
 });

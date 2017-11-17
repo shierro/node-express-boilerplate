@@ -5,7 +5,7 @@
     "description": "",
     "version": "0.1.0"
   },
-  "basePath": "/api",
+  "basePath": "/",
   "consumes": [
     "application/json"
   ],
@@ -13,31 +13,38 @@
     "application/json"
   ],
   "paths": {
-    "/quote": {
-      "post": {
+    "/version": {
+      "get": {
         "tags": [],
         "summary": "",
-        "parameters": [
-          {
-            "in": "body",
-            "name": "body",
-            "description": "Result of workflow",
-            "required": true,
+        "responses": {
+          "200": {
+            "description": "Successful operation",
             "schema": {
-              "type": "object",
-              "properties": {
-                "referenceNumber": {
-                  "type": "string",
-                  "default": "client123"
-                },
-                "result": {
-                  "type": "object",
-                  "properties": {}
-                }
-              }
+              "$ref": "#/definitions/200Response"
             }
           }
-        ],
+        }
+      }
+    },
+    "/status": {
+      "get": {
+        "tags": [],
+        "summary": "",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "schema": {
+              "$ref": "#/definitions/200Response"
+            }
+          }
+        }
+      }
+    },
+    "/healcheck": {
+      "get": {
+        "tags": [],
+        "summary": "",
         "responses": {
           "200": {
             "description": "Successful operation",
@@ -57,11 +64,6 @@
           "type": "number",
           "description": "Http success result code",
           "default": 200
-        },
-        "message": {
-          "description": "Response message",
-          "default": "Success",
-          "type": "string"
         }
       }
     }

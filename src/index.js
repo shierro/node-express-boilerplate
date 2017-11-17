@@ -4,7 +4,6 @@ const bodyParser = require('body-parser');
 const helmet = require('helmet');
 const cors = require('cors');
 const compression = require('compression');
-const swagger = require('./swagger');
 const routes = require('./routes');
 const logger = require('./utils/logger');
 
@@ -20,13 +19,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(require('morgan')('short', { stream: logger.logStream }));
 
-swagger(app);
 routes(app);
 
 app.server.listen(process.env.PORT || 8080, () => {
-  logger.info(
-    `ENV[${process.env.NODE_ENV}] Started on port ${app.server.address().port}`
-  );
+  logger.info(`ENV[${process.env.NODE_ENV}] Started on port ${app.server.address().port}`);
 });
 
 module.exports = app;

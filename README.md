@@ -29,3 +29,6 @@ $ npm run cover
   - http://localhost:8080/status
   - http://localhost:8080/healthcheck
   - http://localhost:8080/version
+
+# OpenAPI(Swagger) Specs
+## http://localhost:8080/specs
