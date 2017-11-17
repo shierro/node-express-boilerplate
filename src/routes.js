@@ -15,12 +15,13 @@ module.exports = (app) => {
   /* APIs */
   app.use('/api', router);
 
-  app.use('/healthcheck', require('express-healthcheck')());
-  app.get('/version', require('version-healthcheck'));
-
+  /* Status */
+  app.use('/healthcheck', auth.connect(basic), require('express-healthcheck')());
+  app.get('/version', auth.connect(basic), require('version-healthcheck'));
   app.use(statusMonitor.middleware);
   app.get('/status', auth.connect(basic), statusMonitor.pageRoute);
 
+  /* Error Handling */
   app.use(ErrorController.error404);
   app.use(ErrorController.generalError);
 }

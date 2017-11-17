@@ -24,3 +24,8 @@ $ npm test
 `
 $ npm run cover
 `
+
+# Built-in Application Monitoring
+  - http://localhost:8080/status
+  - http://localhost:8080/healthcheck
+  - http://localhost:8080/version
