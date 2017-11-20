@@ -7,10 +7,11 @@ const versionCheck = require('version-healthcheck');
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger/swagger.json');
 
+const { STATUS_USERNAME, STATUS_PASSWORD } = process.env;
 const basic = auth.basic(
   { realm: 'Monitor Area' },
   (user, pass, callback) =>
-    callback(user === process.env.STATUS_USERNAME && pass === process.env.STATUS_PASSWORD),
+    callback(user === STATUS_USERNAME && pass === STATUS_PASSWORD),
 );
 
 module.exports = (app) => {
