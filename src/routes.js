@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const ErrorController = require('./controllers/ErrorController');
 const auth = require('http-auth');
