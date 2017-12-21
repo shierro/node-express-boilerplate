@@ -14,7 +14,7 @@ $ cd <project_name> && npm i
 ```
 $ cp .env.tpl .env
 ```
-## Edit .env with your env
+Change .env vars with your env
 
 # Start Application
 ```
@@ -35,7 +35,7 @@ $ npm run cover
 ```
 $ npm run generate:models
 ```
-## Since `sequelize-auto` does not yet support es6 funcs & custom indentation, check `/src/models/generated/` & manually fix problems so it will pass `npm run lint`
+##### Since `sequelize-auto` does not yet support es6 funcs & custom indentation, check `/src/models/generated/` & manually fix problems so it will pass `npm run lint`
 
 # Built-in Application Monitoring
   - http://localhost:8080/status
@@ -43,4 +43,4 @@ $ npm run generate:models
   - http://localhost:8080/version
 
 # OpenAPI(Swagger) Specs
-## http://localhost:8080/specs
+-  http://localhost:8080/specs
