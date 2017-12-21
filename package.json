@@ -12,13 +12,14 @@
     "start:watch": "npm-run-all --parallel run:watch lint:watch test:watch",
     "lint": "eslint --ignore-path .eslintignore  . ",
     "lint:watch": "esw --ignore-path .eslintignore  . --watch",
-    "test:specs": "cross-env NODE_ENV=test mocha --recursive ./src/",
+    "test:specs": "cross-env NODE_ENV=test mocha --recursive --exit ./src/",
     "test:specs:watch": "npm run test:specs -- --watch",
     "test": "npm run test:specs",
     "test:watch": "npm-run-all --parallel test:spec:watch",
-    "cover": "cross-env NODE_ENV=test nyc mocha --recursive ./src/",
+    "cover": "cross-env NODE_ENV=test nyc mocha --recursive --exit ./src/",
     "postcover": "cp coverage/coverage-final.json coverage/coverage.json",
-    "nsp": "./node_modules/.bin/nsp check --output summary"
+    "nsp": "./node_modules/.bin/nsp check --output summary",
+    "generate:models": "cross-env NODE_ENV=development node ./src/utils/generateModels.js"
   },
   "repository": {
     "type": "git",
@@ -32,6 +33,8 @@
     "eslint-config-airbnb-base": "^12.0.1",
     "eslint-plugin-import": "^2.7.0",
     "mocha": "^4.0.1",
+    "mysql": "^2.15.0",
+    "nodemon": "^1.14.1",
     "npm-run-all": "^4.1.1",
     "nsp": "^3.1.0",
     "nyc": "^11.4.0",
@@ -51,6 +54,9 @@
     "http-auth": "^3.2.3",
     "lodash": "^4.17.4",
     "morgan": "^1.9.0",
+    "mysql2": "^1.5.1",
+    "sequelize": "^4.28.6",
+    "sequelize-auto": "^0.4.29",
     "swagger-ui-express": "^2.0.11",
     "version-healthcheck": "^0.1.2",
     "winston": "^2.4.0"

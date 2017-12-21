@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const http = require('http');
 const bodyParser = require('body-parser');
@@ -6,8 +8,6 @@ const cors = require('cors');
 const compression = require('compression');
 const routes = require('./routes');
 const logger = require('./utils/logger');
-
-require('dotenv').config();
 
 const app = express();
 app.server = http.createServer(app);

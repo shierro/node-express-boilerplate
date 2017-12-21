@@ -62,3 +62,6 @@ jspm_packages
 # Miscellaneous
 .idea
 .env
+
+# VScode
+.vscode

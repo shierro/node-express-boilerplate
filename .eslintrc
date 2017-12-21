@@ -8,7 +8,6 @@
     "sourceType": "module"
   },
   "globals": {
-    // Mocha global variables
     "describe": true,
     "beforeEach": true,
     "before": true,
@@ -18,6 +17,7 @@
   },
   "rules": {
     "no-console": 0,
-    "no-unused-vars": 1
+    "no-unused-vars": 1,
+    "global-require": 0
   }
 }
