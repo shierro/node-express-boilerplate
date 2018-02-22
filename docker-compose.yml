@@ -1,0 +1,41 @@
+version: '3'
+services:
+  reverse-proxy:
+    image: nginx:1.13
+    ports:
+      - $PORT:80
+    logging:
+      # limit logs retained on host to .5MB
+      driver: "json-file"
+      options:
+        max-size: "5k"
+        max-file: "1"
+    volumes:
+      - ./config/nginx/reverse-proxy.conf:/etc/nginx/nginx.conf:ro
+      # - ./config/nginx/cert.pem:/usr/share/nginx/cert.pem:ro
+      # - ./config/nginx/key.pem:/usr/share/nginx/cert.key:ro
+  app:
+    build: .
+    restart: always
+    environment:
+      - NODE_ENV=$NODE_ENV
+      - PORT=8080 #don't change this for deployment because nginx redirects to port 8080
+      - STATUS_USERNAME=$STATUS_USERNAME
+      - STATUS_PASSWORD=$STATUS_PASSWORD
+      - DB=$DB
+      - DB_USER=$DB_USER
+      - DB_HOST=$DB_HOST
+      - DB_PORT=$DB_PORT
+      - DB_PASSWORD=$DB_PASSWORD
+      - DB_MAX_POOL=$DB_MAX_POOL
+      - DB_LOGGING=$DB_LOGGING
+    logging:
+      # limit logs retained on host to 25MB
+      driver: "json-file"
+      options:
+        max-size: "500k"
+        max-file: "50"
+    volumes:
+      - ./images:/opt/app-root/images
+
+

@@ -1,8 +1,9 @@
 # NodeJS Express Boilerplate
 
 ## Requirements
- - NodeJS v7+
- - NPM < v5.2 && > v4
+ - NodeJS v8.1+
+ - NPM v4+
+ - Docker, docker compose/swarm for prod to maximize nginx caching & security(optional)
 
 ## Install
 ```
@@ -16,9 +17,9 @@ $ cp .env.tpl .env
 ```
 Change .env vars with your env
 
-## Start Application
+## Dev mode
 ```
-$ npm start
+$ npm run dev
 ```
 
 ## Run unit test
@@ -26,21 +27,25 @@ $ npm start
 $ npm test
 ```
 
-## Get test coverage
+## Generate test coverage
 ```
 $ npm run cover
 ```
 
-## Have an existing SQL database? Auto generate your application models!
+## Prod mode w/ docker-compose
+```
+$ docker-compose up -d
+```
+
+## Uses sequelize & sequelize-auto to handle the model layer
 ```
 $ npm run generate:models
 ```
-##### Since `sequelize-auto` does not yet support es6 funcs & custom indentation, check `/src/models/generated/` & manually fix problems so it will pass `npm run lint`
 
 ## Built-in Application Monitoring
-  - http://localhost:8080/status
-  - http://localhost:8080/healthcheck
-  - http://localhost:8080/version
+  - http://localhost:<PORT_IN_ENV>/status
+  - http://localhost:<PORT_IN_ENV>/healthcheck
+  - http://localhost:<PORT_IN_ENV>/version
 
 ## OpenAPI(Swagger) Specs
--  http://localhost:8080/specs
+-  http://localhost:<PORT_IN_ENV>/specs
