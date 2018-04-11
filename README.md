@@ -1,7 +1,20 @@
 # NodeJS Express Boilerplate
+- NodeJS boilerplate on top of express without the need to use Babel
+
+## Built-in modules/libraries
+- ExpressJS - NodeJS HTTP Framework
+- Sequelize - NodeJS ORM
+- Mogran - Express logger
+- Winston - Logs transport to console/file. Logrotate daily added
+- Dotenv - environment manager (TODO): Switch to dotenv-safe
+- MochaJS - Testing framework
+- Eslint - Base:AirBnB
+- Swagger - Define/Document APIs
+
+*and more*
 
 ## Requirements
- - NodeJS v8.1+
+ - NodeJS v7.6+
  - NPM v4+
  - Docker, docker compose/swarm for prod to maximize nginx caching & security(optional)
 

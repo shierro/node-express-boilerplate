@@ -1,4 +1,5 @@
 const winston = require('winston');
+require('winston-daily-rotate-file');
 
 /* istanbul ignore next */
 const logger = process.env.NODE_ENV !== 'test' ?
@@ -12,6 +13,14 @@ const logger = process.env.NODE_ENV !== 'test' ?
         json: process.env.NODE_ENV === 'production',
         stringify: process.env.NODE_ENV === 'production',
         timestamp: true,
+      }),
+      new (winston.transports.DailyRotateFile)({
+        filename: '%DATE%.log',
+        datePattern: 'YYYY-MM-DD-HH',
+        zippedArchive: true,
+        maxSize: '20m',
+        maxFiles: '14d',
+        dirname: 'logs',
       }),
     ],
   }) :
