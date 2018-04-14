@@ -19,10 +19,10 @@ const auto = new SequelizeAuto(DB, DB_USER, DB_PASS, {
   directory: 'src/models/generated',
 });
 
+/* istanbul ignore next */
 if (NODE_ENV === 'development') {
   auto.run((err) => {
     if (err) throw err;
-
     console.log(auto.tables); // table list
     console.log(auto.foreignKeys); // foreign key list
   });

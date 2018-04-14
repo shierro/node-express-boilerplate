@@ -21,6 +21,7 @@ app.use(require('morgan')('short', { stream: logger.logStream }));
 
 routes(app);
 
+/* istanbul ignore next */
 app.server.listen(process.env.PORT || 8080, () => {
   logger.info(`ENV[${process.env.NODE_ENV}] Started on port ${app.server.address().port}`);
 });
