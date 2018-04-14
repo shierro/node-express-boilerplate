@@ -22,7 +22,7 @@
 *and more*
 
 ## Requirements
- - NodeJS v7.6+
+ - NodeJS v7.0+
  - NPM v4+
  - Docker, docker compose/swarm for prod to maximize nginx caching & security(optional)
 
