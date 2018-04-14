@@ -1,4 +1,12 @@
 # NodeJS Express Boilerplate
+
+[![Build Status](https://travis-ci.org/shierro/node-express-boilerplate.svg?branch=master)](https://travis-ci.org/shierro/node-express-boilerplate)
+[![Maintainability](https://api.codeclimate.com/v1/badges/a6fbd06ef529c7af570f/maintainability)](https://codeclimate.com/github/shierro/node-express-boilerplate/maintainability)
+[![codecov](https://codecov.io/gh/shierro/node-express-boilerplate/branch/master/graph/badge.svg)](https://codecov.io/gh/shierro/node-express-boilerplate)
+[![dependency status](https://david-dm.org/shierro/node-express-boilerplate/status.svg)](https://david-dm.org/shierro/node-express-boilerplate/status.svg)
+[![devDependency status](https://david-dm.org/shierro/node-express-boilerplate/dev-status.svg)](https://david-dm.org/shierro/node-express-boilerplate/dev-status.svg)
+
+
 - NodeJS boilerplate on top of express without the need to use Babel
 
 ## Built-in modules/libraries
@@ -60,5 +68,5 @@ $ npm run generate:models
   - http://localhost:<PORT_IN_ENV>/healthcheck
   - http://localhost:<PORT_IN_ENV>/version
 
-## OpenAPI(Swagger) Specs
+## Swagger Specs
 -  http://localhost:<PORT_IN_ENV>/specs

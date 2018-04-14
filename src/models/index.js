@@ -1,7 +1,5 @@
 const Sequelize = require('sequelize');
 
-const logger = require('../utils/logger');
-
 const {
   DB,
   DB_USER,
@@ -20,7 +18,7 @@ const sequelize = new Sequelize(DB, DB_USER, DB_PASSWORD, {
   },
   // http://docs.sequelizejs.com/manual/tutorial/querying.html#operators
   operatorsAliases: false,
-  logging: DB_LOGGING === 'true' ? logger.info : false,
+  logging: DB_LOGGING === 'true',
 });
 
 const ProductCodes = require('./ProductCodes')(sequelize, Sequelize);
