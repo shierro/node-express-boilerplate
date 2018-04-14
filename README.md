@@ -1,4 +1,6 @@
 # NodeJS Express Boilerplate
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/shierro/node-express-boilerplate.svg)](https://greenkeeper.io/)
 - NodeJS boilerplate on top of express without the need to use Babel
 
 ## Built-in modules/libraries
