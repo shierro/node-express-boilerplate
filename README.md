@@ -1,5 +1,6 @@
 # NodeJS Express Boilerplate
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/shierro/node-express-boilerplate.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/shierro/node-express-boilerplate.svg?branch=master)](https://travis-ci.org/shierro/node-express-boilerplate)
 [![Maintainability](https://api.codeclimate.com/v1/badges/a6fbd06ef529c7af570f/maintainability)](https://codeclimate.com/github/shierro/node-express-boilerplate/maintainability)
 [![codecov](https://codecov.io/gh/shierro/node-express-boilerplate/branch/master/graph/badge.svg)](https://codecov.io/gh/shierro/node-express-boilerplate)
