@@ -6,6 +6,7 @@
 [![codecov](https://codecov.io/gh/shierro/node-express-boilerplate/branch/master/graph/badge.svg)](https://codecov.io/gh/shierro/node-express-boilerplate)
 [![dependency status](https://david-dm.org/shierro/node-express-boilerplate/status.svg)](https://david-dm.org/shierro/node-express-boilerplate/status.svg)
 [![devDependency status](https://david-dm.org/shierro/node-express-boilerplate/dev-status.svg)](https://david-dm.org/shierro/node-express-boilerplate/dev-status.svg)
+[![Known Vulnerabilities](https://snyk.io/test/github/shierro/node-express-boilerplate/badge.svg)](https://snyk.io/test/github/shierro/node-express-boilerplate)
 
 
 - NodeJS boilerplate on top of express without the need to use Babel
