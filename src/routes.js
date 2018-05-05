@@ -7,21 +7,23 @@ const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('../swagger.json');
 const authService = require('./services/authService');
 
+const basicAuth = authService.basic();
+
 module.exports = (app) => {
   const router = express.Router();
   /* APIs */
   app.use('/api', router);
 
   /* Status */
-  app.use('/healthcheck', authService.basic, healthcheck());
-  app.get('/version', authService.basic, versionCheck);
+  app.use('/healthcheck', basicAuth, healthcheck());
+  app.get('/version', basicAuth, versionCheck);
   app.use(statusMonitor.middleware);
-  app.get('/status', authService.basic, statusMonitor.pageRoute);
+  app.get('/status', basicAuth, statusMonitor.pageRoute);
 
   /* OpenAPI SPECS */
   app.use(
     '/specs', [
-      authService.basic,
+      basicAuth,
       swaggerUi.serve,
     ],
     swaggerUi.setup(swaggerDocument, true, {
