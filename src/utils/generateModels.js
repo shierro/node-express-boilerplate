@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv-safe').config();
 const SequelizeAuto = require('sequelize-auto');
 
 const {

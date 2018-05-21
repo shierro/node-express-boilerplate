@@ -16,7 +16,7 @@
 - Sequelize - NodeJS ORM
 - Mogran - Express logger
 - Winston - Logs transport to console/file. Logrotate daily added
-- Dotenv - environment manager (TODO): Switch to dotenv-safe
+- dotenv-safe - environment manager
 - MochaJS - Testing framework
 - Eslint - Base:AirBnB
 - Swagger - Define/Document APIs
@@ -34,9 +34,9 @@ $ git clone https://github.com/shierro/node-express-boilerplate <project_name>
 $ cd <project_name> && npm i
 ```
 
-## Set your Environment vars
+## Set your Environment vars (important)
 ```
-$ cp .env.tpl .env
+$ cp .env.example .env
 ```
 Change .env vars with your env
 
