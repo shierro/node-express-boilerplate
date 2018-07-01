@@ -8,16 +8,15 @@ dist: trusty
 addons:
   chrome: stable
 before_script:
-  - npm install -g codecov
-  - yarn global add nyc
+  - npm install -g codecov yarn nyc
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build --debug
 
 script:
-  - npm run lint
-  - npm run nsp
-  - nyc --reporter=lcov yarn run cover
+  - yarn lint
+  - yarn nsp
+  - nyc --reporter=lcov yarn cover
 
 after_script:
   - ./cc-test-reporter format-coverage --output "coverage/codeclimate.$N.json" --debug
@@ -27,6 +26,13 @@ after_script:
   - codecov -f coverage/lcov.info --disable=gcov
 
 notifications:
-  slack: $SLACK_ID
+  slack:
+    rooms:
+      - ninjaro:clZjvDamAByBYA004CYcYlH6#build
+    on_success: always # default: always
+    on_failure: always # default: always
   email:
-    - $SLACK_EMAIL
+    recipients:
+      - theodoro.pelingan@gmail.com
+    on_success: always # default: change
+    on_failure: always # default: always

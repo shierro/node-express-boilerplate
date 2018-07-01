@@ -25,7 +25,7 @@
 
 ## Requirements
  - NodeJS v7.0+
- - NPM v4+
+ - Yarn
  - Docker, docker compose/swarm for prod to maximize nginx caching & security(optional)
 
 ## Install
@@ -42,17 +42,17 @@ Change .env vars with your env
 
 ## Dev mode
 ```
-$ npm run dev
+$ yarn dev
 ```
 
 ## Run unit test
 ```
-$ npm test
+$ yarn test
 ```
 
 ## Generate test coverage
 ```
-$ npm run cover
+$ yarn run cover
 ```
 
 ## Prod mode w/ docker-compose
@@ -62,7 +62,7 @@ $ docker-compose up -d
 
 ## Uses sequelize & sequelize-auto to handle the model layer
 ```
-$ npm run generate:models
+$ yarn generate:models
 ```
 
 ## Built-in Application Monitoring
