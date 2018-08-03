@@ -3,7 +3,7 @@ require('winston-daily-rotate-file');
 
 /* istanbul ignore next */
 const logger = process.env.NODE_ENV !== 'test' ?
-  new (winston.Logger)({
+  winston.createLogger({
     transports: [
       new (winston.transports.Console)({
         level: process.env.LOG_LEVEL || 'debug',

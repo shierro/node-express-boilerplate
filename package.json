@@ -1,6 +1,6 @@
 {
   "name": "node-express-boilerplate",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Boilerplate using NodeJS v7+ & Express Framework",
   "main": "./src/index.js",
   "engines": {
