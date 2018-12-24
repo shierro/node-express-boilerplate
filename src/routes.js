@@ -1,10 +1,10 @@
 const express = require('express');
-const ErrorController = require('./controllers/ErrorController');
-const statusMonitor = require('express-status-monitor')({ path: '' });
 const healthcheck = require('express-healthcheck');
 const versionCheck = require('version-healthcheck');
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('../swagger.json');
+
+const ErrorController = require('./controllers/ErrorController');
 const authService = require('./services/authService');
 
 const basicAuth = authService.basic();
@@ -17,8 +17,6 @@ module.exports = (app) => {
   /* Status */
   app.use('/healthcheck', basicAuth, healthcheck());
   app.get('/version', basicAuth, versionCheck);
-  app.use(statusMonitor.middleware);
-  app.get('/status', basicAuth, statusMonitor.pageRoute);
 
   /* OpenAPI SPECS */
   app.use(

@@ -1,3 +1,4 @@
+/* eslint-disable */
 module.exports = (sequelize, DataTypes) =>
   sequelize.define('product_codes', {
     id: {
