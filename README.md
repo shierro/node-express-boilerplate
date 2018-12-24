@@ -66,7 +66,6 @@ $ yarn generate:models
 ```
 
 ## Built-in Application Monitoring
-  - http://localhost:<PORT_IN_ENV>/status
   - http://localhost:<PORT_IN_ENV>/healthcheck
   - http://localhost:<PORT_IN_ENV>/version
 
