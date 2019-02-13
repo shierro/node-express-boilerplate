@@ -63,7 +63,7 @@
     "swagger-ui-express": "^4.0.2",
     "version-healthcheck": "^0.1.2",
     "winston": "^3.1.0",
-    "winston-daily-rotate-file": "^3.5.1"
+    "winston-daily-rotate-file": "^3.7.0"
   },
   "pre-commit": [
     "lint",
